@@ -15,7 +15,7 @@ namespace Valemobi.Controllers
             return View();
         }
 
-        public ActionResult Conectar()
+       /* public ActionResult Conectar()
         {
             OracleConnection c = new OracleConnection();
             c.ConnectionString =
@@ -26,7 +26,10 @@ namespace Valemobi.Controllers
             {
                 c.Open();
                 c.Close();
-            }catch (OracleException e)
+
+                return View("Conectado");
+            }
+            catch (OracleException e)
             {
                 string errorMessage = "Code: " + e.Code + "\n" +
                            "Message: " + e.Message;
@@ -38,7 +41,8 @@ namespace Valemobi.Controllers
             }
             
             
-            return View("Conectado");
+            return View("Index");
         }
+        */
     }
 }

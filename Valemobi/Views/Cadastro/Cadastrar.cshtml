@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+<form action="@Url.Action("CadastrarOperacao","Cadastro")" method="post">
+    <input type="text" placeholder="Código da Mercadoria" name="coidgo" required />
+    <br />
+    <input type="text" placeholder="Tipo da Mercadoria" name="tipo" required />
+    <br />
+    <input type="text" placeholder="Nome Mercadoria" name="nome" required />
+    <br />
+    <input type="number" step="1" min="1" placeholder="Quatidade" name="quantidade" required />
+    <br />
+    <input type="number" step="0.1" min="0.1" placeholder="Preço" name="preco" required />
+    <br />
+    <select name="tipoNegocio" required>
+        <option value="compra">Compra</option>
+        <option value="venda">Venda</option>
+    </select>
+    <input type="submit" value="Cadastrar" />
+
+</form>
+

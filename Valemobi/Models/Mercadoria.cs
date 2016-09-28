@@ -8,9 +8,23 @@ namespace Valemobi.Models
 {
     public class Mercadoria
     {
-        private String nome { get; set; }
-        private int quantidade { get; set; }
-        private double preco { get; set; }
-        private String codigo { get; set; }
+        public String nome { get; set; }
+        public int quantidade { get; set; }
+        public double preco { get; set; }
+        public String codigo { get; set; }
+        public String tipo { get; set; }
+        public String tipoNegocio { get; set; }
+
+        public Mercadoria(String nome, String codigo, String tipo, int quantidade, double preco, String tipoNegocio)
+        {
+            this.nome = nome;
+            this.codigo = codigo;
+            this.tipo = tipo;
+            this.quantidade = quantidade;
+            this.preco = preco;
+            this.tipoNegocio = tipoNegocio;
+        }
     }
+
+    
 }
