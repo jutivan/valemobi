@@ -4,7 +4,7 @@
 }
 
 <h2>Cadastrar</h2>
-<form action="@Url.Action("CadastrarOperacao","Cadastro")" method="post">
+<form id="cadMercadoria" action="@Url.Action("CadastrarOperacao","Cadastro")" method="post">
     <input type="text" placeholder="Código da Mercadoria" name="coidgo" required />
     <br />
     <input type="text" placeholder="Tipo da Mercadoria" name="tipo" required />
@@ -20,6 +20,11 @@
         <option value="venda">Venda</option>
     </select>
     <input type="submit" value="Cadastrar" />
-
+    
 </form>
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script>
+        $("#cadMercadoria").validate();
+</script>
