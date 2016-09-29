@@ -15,6 +15,11 @@ namespace Valemobi.Controllers
             return View("Cadastrar");
         }
 
+        public ActionResult Listar()
+        {
+            return View("Cadastrado", merc);
+        }
+
         public ActionResult CadastrarOperacao(String nome, String codigo, String tipo, String quantidade, String preco, String tipoNegocio)
         {
             double p = Convert.ToDouble(preco);
