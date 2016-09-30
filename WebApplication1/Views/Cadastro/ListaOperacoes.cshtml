@@ -1,4 +1,4 @@
-﻿@model List<Valemobi.Models.Mercadoria>
+﻿@model List<WebApplication1.Models.Mercadoria>
 @{
     ViewBag.Title = "ListaOperacoes";
 }
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < @Model.Count; i++)
+            @for (int i = 0; i < @Model.Count(); i++)
             {
                 <tr>
                     <td>@Model[i].codigo</td>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vmobiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_transacao">
+    <Key>
+      <PropertyRef Name="id_transacao" />
+    </Key>
+    <Property Name="id_transacao" Type="Int32" Nullable="false" />
+    <Property Name="id_mercadoria" Type="Int32" Nullable="false" />
+    <Property Name="tp_mercadoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nm_mercadoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qt_mercadoria" Type="Int32" Nullable="false" />
+    <Property Name="vl_transacao" Type="Int32" Nullable="false" />
+    <Property Name="tp_transacao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="vmobiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_transacao" EntityType="Self.tb_transacao" />
+  </EntityContainer>
+</Schema>

@@ -9,12 +9,17 @@ namespace WebApplication1.Models
     {
         public String nome { get; set; }
         public int quantidade { get; set; }
-        public double preco { get; set; }
+        public int preco { get; set; }
         public String codigo { get; set; }
         public String tipo { get; set; }
         public String tipoNegocio { get; set; }
 
-        public Mercadoria(String nome, String codigo, String tipo, int quantidade, double preco, String tipoNegocio)
+        public Mercadoria()
+        {
+
+        }
+
+        public Mercadoria(String nome, String codigo, String tipo, int quantidade, int preco, String tipoNegocio)
         {
             this.nome = nome;
             this.codigo = codigo;

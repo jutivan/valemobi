@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vmobiModelStoreContainer" CdmEntityContainer="vmobiEntities1">
+    <EntitySetMapping Name="tb_transacao">
+      <EntityTypeMapping TypeName="vmobiModel.tb_transacao">
+        <MappingFragment StoreEntitySet="tb_transacao">
+          <ScalarProperty Name="id_transacao" ColumnName="id_transacao" />
+          <ScalarProperty Name="id_mercadoria" ColumnName="id_mercadoria" />
+          <ScalarProperty Name="tp_mercadoria" ColumnName="tp_mercadoria" />
+          <ScalarProperty Name="nm_mercadoria" ColumnName="nm_mercadoria" />
+          <ScalarProperty Name="qt_mercadoria" ColumnName="qt_mercadoria" />
+          <ScalarProperty Name="vl_transacao" ColumnName="vl_transacao" />
+          <ScalarProperty Name="tp_transacao" ColumnName="tp_transacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

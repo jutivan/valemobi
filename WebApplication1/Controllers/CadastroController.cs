@@ -4,47 +4,91 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using MySql.Data.MySqlClient;
 
 namespace Valemobi.Controllers
 {
     public class CadastroController : Controller
     {
-        public static List<Mercadoria> merc = new List<Mercadoria>();
-        public DBCon db = new DBCon();
+        MySqlConnection con = new MySqlConnection();
+        MySqlCommand cmd;
+        static String conString = "SERVER=localhost;" + "DATABASE=vmobi;" + "UID=****;" + "PASSWORD=*****;";
+
 
         public ActionResult PagCadastro()
         {
             return View("Cadastrar");
         }
 
-        public ActionResult Listar()
-        {
-            return View("ListaOperacoes", merc);
-        }
-
         public ActionResult CadastrarOperacao(String nome, String codigo, String tipo, String quantidade, String preco, String tipoNegocio)
         {
-            double p = Convert.ToDouble(preco);
+            con.ConnectionString = conString;
+            cmd = con.CreateCommand();
+            int p = Convert.ToInt32(preco);
             int q = Convert.ToInt32(quantidade);
-            Mercadoria a = new Mercadoria(nome, codigo, tipo, q, p, tipoNegocio);
-            merc.Add(a);
-            return View("ListaOperacoes", merc);
+            try
+            {
+                con.Open();
+                cmd.CommandText = "INSERT INTO tb_transacao( ID_MERCADORIA,TP_MERCADORIA,NM_MERCADORIA,QT_MERCADORIA,VL_TRANSACAO,TP_TRANSACAO) VALUES(@param1,@param2,@param3,@param4,@param5,@param6)";
+                cmd.Parameters.AddWithValue("@param1", codigo);
+                cmd.Parameters.AddWithValue("@param2", tipo);
+                cmd.Parameters.AddWithValue("@param3", nome);
+                cmd.Parameters.AddWithValue("@param4", q);
+                cmd.Parameters.AddWithValue("@param5", p);
+                cmd.Parameters.AddWithValue("@param6", tipoNegocio);
+                
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                return View("Cadastrar");
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+            return View("Sucesso");
         }
 
-        public ActionResult TestCon()
+        public ActionResult ListarOperacoes()
         {
-            bool a = db.Abrir();
-            if (a.Equals(true))
+            List<Mercadoria> merca = new List<Mercadoria>();
+            con.ConnectionString = conString;
+            cmd = con.CreateCommand();
+            try
             {
-                a = db.Fechar();
-                return View("ListaOperacoes", merc);
+                cmd.CommandText = "SELECT * FROM tb_transacao";
+                cmd.CommandType = System.Data.CommandType.Text;
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Mercadoria m = new Mercadoria();
+                    m.codigo = reader["ID_MERCADORIA"].ToString();
+                    m.tipo = reader["TP_MERCADORIA"].ToString();
+                    m.nome = reader["NM_MERCADORIA"].ToString();
+                    m.quantidade = Convert.ToInt32(reader["QT_MERCADORIA"].ToString());
+                    m.preco = Convert.ToInt32(reader["VL_TRANSACAO"].ToString());
+                    m.tipoNegocio = reader["TP_TRANSACAO"].ToString();
+                    merca.Add(m);
+                }
+
             }
-            else
+            catch (MySqlException e)
             {
                 return View("Index");
             }
+            finally
+            {
+                con.Close();
+            }
+            return View("ListaOperacoes", merca);
 
         }
+
+
 
     }
 }
