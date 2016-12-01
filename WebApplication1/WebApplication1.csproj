@@ -136,7 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DadosModel.cs" />
     <Compile Include="Models\Mercadoria.cs" />
+    <Compile Include="Models\tb_transacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

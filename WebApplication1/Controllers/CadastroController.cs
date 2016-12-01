@@ -12,7 +12,7 @@ namespace Valemobi.Controllers
     {
         MySqlConnection con = new MySqlConnection();
         MySqlCommand cmd;
-        static String conString = "SERVER=localhost;" + "DATABASE=vmobi;" + "UID=****;" + "PASSWORD=*****;";
+        static String conString = "SERVER=localhost;" + "DATABASE=vmobi;" + "UID=root;" + "PASSWORD=Jutisk8*;";
 
 
         public ActionResult PagCadastro()
