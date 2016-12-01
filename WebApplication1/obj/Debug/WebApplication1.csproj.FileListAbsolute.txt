@@ -103,3 +103,6 @@ D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\o
 D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\obj\Debug\WebApplication1.pdb
 D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\bin\MySql.Data.dll
 D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\bin\EntityFramework.SqlServer.dll
+D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\bin\MySql.Data.Entity.EF6.dll
+D:\Users\jcarvalho\Documents\Visual Studio 2015\Projects\Vmobi\WebApplication1\bin\EntityFramework.SqlServer.xml
