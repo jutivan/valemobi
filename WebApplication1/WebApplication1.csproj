@@ -137,8 +137,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DadosModel.cs" />
-    <Compile Include="Models\Mercadoria.cs" />
-    <Compile Include="Models\tb_transacao.cs" />
+    <Compile Include="Models\Transacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,9 +155,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Cadastro\ListaOperacoes.cshtml" />
     <Content Include="Views\Cadastro\Cadastrar.cshtml" />
     <Content Include="Views\Cadastro\Sucesso.cshtml" />
+    <Content Include="Views\Cadastro\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

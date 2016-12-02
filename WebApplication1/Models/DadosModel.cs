@@ -12,24 +12,24 @@ namespace WebApplication1.Models
         {
         }
 
-        public virtual DbSet<tb_transacao> tb_transacao { get; set; }
+        public virtual DbSet<Transacao> tb_transacao { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<tb_transacao>()
-                .Property(e => e.ID_MERCADORIA)
+            modelBuilder.Entity<Transacao>()
+                .Property(e => e.codigoMercadoria)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tb_transacao>()
-                .Property(e => e.TP_MERCADORIA)
+            modelBuilder.Entity<Transacao>()
+                .Property(e => e.tipoMercadoria)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tb_transacao>()
-                .Property(e => e.NM_MERCADORIA)
+            modelBuilder.Entity<Transacao>()
+                .Property(e => e.nomeMercadoria)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<tb_transacao>()
-                .Property(e => e.TP_TRANSACAO)
+            modelBuilder.Entity<Transacao>()
+                .Property(e => e.tipoTransacao)
                 .IsUnicode(false);
         }
     }

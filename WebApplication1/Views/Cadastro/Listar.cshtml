@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication1.Models.Transacao>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+
+<table class="table">
+    <tr>
+        <th>Código Mercadoria</th>
+        <th>Tipo Mercadoria</th>
+        <th>Nome Mercadoria</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+        <th>Tipo do Negócio </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoMercadoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoMercadoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeMercadoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorTransacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoTransacao)
+            </td>
+        </tr>
+    }
+
+</table>
